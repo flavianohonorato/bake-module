@@ -1,0 +1,9 @@
+
+<?php
+
+namespace Modules\{{modelName}}\Interfaces;
+
+interface {{modelName}}Interface
+{
+
+}

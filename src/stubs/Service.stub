@@ -1,0 +1,11 @@
+
+<?php
+
+namespace Modules\{{modelName}}\Services;
+
+use Modules\{{modelName}}\Interfaces\{{modelName}}Interface;
+
+class {{modelName}}Service implements {{modelName}}Interface
+{
+
+}

@@ -1,0 +1,17 @@
+<?php
+
+namespace Modules\{{modelName}}\Facades;
+
+use Illuminate\Support\Facades\Facade;
+use Modules\{{modelName}}\Interfaces\{{modelName}}Interface;
+
+class {{modelName}}Facade extends Facade
+{
+    /**
+     * @return string
+     */
+    protected static function getFacadeAccessor()
+    {
+        return {{modelName}}Interface::class;
+    }
+}

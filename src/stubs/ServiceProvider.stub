@@ -1,0 +1,43 @@
+
+<?php
+
+namespace Modules\{{modelName}}\Providers;
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\ServiceProvider;
+use Modules\{{modelName}}\Interfaces\{{modelName}}Interface;
+use Modules\{{modelName}}\Services\{{modelName}}Service;
+
+class {{modelName}}ServiceProvider extends ServiceProvider
+{
+    protected $namespace = 'Modules\{{modelName}}\Http\Controllers';
+
+    /**
+     *Bootstrap services.
+     * @return void
+     */
+    public function boot()
+    {
+        $this->apiRoutes();
+        $this->loadMigrationsFrom(__DIR__ . '/../Database/migrations');
+    }
+
+    /**
+     * Api Route
+     */
+    public function apiRoutes()
+    {
+        Route::prefix('api')
+            ->middleware(['api'])
+            ->namespace($this->namespace)
+            ->group(__DIR__ . '/../Routes/api.php');
+    }
+
+    /**
+     * Register
+     */
+    public function register()
+    {
+        $this->app->singleton({{modelName}}Interface::class, {{modelName}}Service::class);
+    }
+}

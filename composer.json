@@ -1,0 +1,20 @@
+{
+    "name": "wicool/bake-module",
+    "description": "Make a Laravel module based skeleton",
+    "type": "package",
+    "license": "mit",
+    "require": {
+        "php": ">=7.1"
+    },
+    "authors": [
+        {
+            "name": "flavianohonorato",
+            "email": "flaviano.honorato@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Wicool\\BakeModule": "src/"
+        }
+    }
+}
