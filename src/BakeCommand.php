@@ -32,6 +32,10 @@ class BakeModuleCommand extends Command
     {
         $name = $this->argument('name');
 
+        if (!file_exists(base_path("/modules")))
+            File::makeDirectory(base_path('/modules'),0777,true);
+            $this->info('O diretório modules foi criado na raiz do seu projeto.');
+
         $this->model($name);
         $this->controller($name);
         $this->route($name);
