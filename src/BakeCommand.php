@@ -33,8 +33,12 @@ class BakeModuleCommand extends Command
         $name = $this->argument('name');
 
         if (!file_exists(base_path("/modules")))
-            File::makeDirectory(base_path('/modules'),0777,true);
-            $this->info('O diretório modules foi criado na raiz do seu projeto.');
+            File::makeDirectory(base_path('/modules'), 0777, true);
+            $this->info('The modules directory was created at the root of your project.');
+
+        if (is_dir(base_path("/modules") . DIRECTORY_SEPARATOR . $this->argument('name'))) {
+            throw new \Exception("The module {$name} already exists!");
+        }
 
         $this->model($name);
         $this->controller($name);
