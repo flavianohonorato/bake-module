@@ -16,3 +16,13 @@ Add your module service provider to ```config/app.php```
 ```
 Modules\Posts\Providers\PostServiceProvider::class,
 ```
+This command generates the following structure with its respective files.
+```
+Facades
+Http/Controllers
+Interfaces
+Models
+Providers
+Routes
+Services
+```
