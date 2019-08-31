@@ -57,7 +57,7 @@ class BakeModuleCommand extends Command
      */
     protected function getStub($name)
     {
-        $from = __DIR__ . 'stubs' . DIRECTORY_SEPARATOR;
+        $from = __DIR__ . DIRECTORY_SEPARATOR . 'stubs' . DIRECTORY_SEPARATOR;
         return file_get_contents($from . $name . '.stub');
     }
 
