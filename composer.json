@@ -3,6 +3,8 @@
     "description": "Make a Laravel module based skeleton",
     "type": "package",
     "license": "mit",
+    "version": "1.0",
+    "keywords": ["laravel", "module"],
     "require": {
         "php": ">=7.1"
     },
@@ -15,6 +17,14 @@
     "autoload": {
         "psr-4": {
             "Wicool\\BakeModule\\": "src/"
+        }
+    },
+    "minimum-stability" : "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wicool\\BakeModule\\Providers\\BakeModuleServiceProvider"
+            ]
         }
     }
 }
